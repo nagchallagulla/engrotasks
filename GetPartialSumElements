@@ -1,0 +1,29 @@
+function getPartialSumElements(arr, target) {
+  const results = [];
+
+  function backtrack(start, combination, sum) {
+    if (sum === target) {
+      results.push([...combination]);
+      return;
+    }
+
+    for (let i = start; i < arr.length; i++) {
+      if (sum + arr[i] > target) {
+        break;
+      }
+
+     combination.push(arr[i]);
+      backtrack(i+1, combination, sum + arr[i]);
+     combination.pop();
+    }
+  }
+
+backtrack(0, [], 0);
+  return results;
+}
+const arr = [4, 2, 5, 9, 12];
+const target = 18;
+
+const result = getPartialSumElements(arr, target);
+
+console.log(result); 
