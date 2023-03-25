@@ -1,0 +1,37 @@
+function isAnagram(s1,s2)
+
+{
+
+
+	let name1 = s1.length;
+	let name2 = s2.length;
+
+
+	if (name1 != name2)
+		return false;
+
+	
+	s1.sort();
+	s2.sort()
+
+
+	for (let i = 0; i < name1; i++)
+		if (s1[i] != s2[i])
+			return false;
+
+	return true;
+}
+	
+
+let s1=['s', 'i', 'l', 'e','n','t'];
+let s2=['l', 'i', 's','t','e', 'n'];
+	
+
+if (isAnagram(s1, s2))
+	console.log(
+	"The two strings are" +
+	" anagram of each other<br>");
+else
+	console.log(
+	"The two strings are not" +
+	" anagram of each other<br>");
